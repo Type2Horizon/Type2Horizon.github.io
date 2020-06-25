@@ -75,21 +75,15 @@ function determineUserScore(userChoice,computerChoice,UserScore) {
   }
 };
 
-function playGame() {
-  const userChoice = getUserChoice(document.getElementById('user_selection').value);
+function playGameRock() {
+  const userChoice = 'rock';
   const computerChoice = getComputerChoice()
   console.log(`you threw ${userChoice}`);
   console.log(`computer threw ${computerChoice}`);
   console.log(determineWinner(userChoice,computerChoice));
   document.getElementById('announceWinner').innerHTML = determineWinner(userChoice,computerChoice);
   document.getElementById('announceScore').innerHTML = determineUserScore(userChoice,computerChoice,userScore);
-  if (userChoice === 'rock') {
   document.getElementById('userPick').setAttribute("class", "far fa-hand-rock fa-10x p-3 align");
-  } else if (userChoice === 'paper') {
-  document.getElementById('userPick').setAttribute("class", "far fa-hand-paper fa-10x p-3");
-  } else {
-  document.getElementById('userPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3");
-  }
   if (computerChoice === 'rock') {
   document.getElementById('computerPick').setAttribute("class", "far fa-hand-rock fa-10x p-3");
   } else if (computerChoice === 'paper') {
@@ -98,4 +92,62 @@ function playGame() {
   document.getElementById('computerPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3");
   }
 };
-document.getElementById('duel').addEventListener('click', playGame);
+
+function playGamePaper() {
+  const userChoice = 'paper';
+  const computerChoice = getComputerChoice()
+  console.log(`you threw ${userChoice}`);
+  console.log(`computer threw ${computerChoice}`);
+  console.log(determineWinner(userChoice,computerChoice));
+  document.getElementById('announceWinner').innerHTML = determineWinner(userChoice,computerChoice);
+  document.getElementById('announceScore').innerHTML = determineUserScore(userChoice,computerChoice,userScore);
+  document.getElementById('userPick').setAttribute("class", "far fa-hand-paper fa-10x p-3 align");
+  if (computerChoice === 'rock') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-rock fa-10x p-3");
+  } else if (computerChoice === 'paper') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-paper fa-10x p-3");
+  } else {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3");
+  }
+};
+
+function playGameScissors() {
+  const userChoice = 'scissors';
+  const computerChoice = getComputerChoice()
+  console.log(`you threw ${userChoice}`);
+  console.log(`computer threw ${computerChoice}`);
+  console.log(determineWinner(userChoice,computerChoice));
+  document.getElementById('announceWinner').innerHTML = determineWinner(userChoice,computerChoice);
+  document.getElementById('announceScore').innerHTML = determineUserScore(userChoice,computerChoice,userScore);
+  document.getElementById('userPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3 align");
+  if (computerChoice === 'rock') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-rock fa-10x p-3");
+  } else if (computerChoice === 'paper') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-paper fa-10x p-3");
+  } else {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3");
+  }
+};
+
+function playGameBomb() {
+  const userChoice = 'bomb';
+  const computerChoice = getComputerChoice()
+  console.log(`you threw ${userChoice}`);
+  console.log(`computer threw ${computerChoice}`);
+  console.log(determineWinner(userChoice,computerChoice));
+  document.getElementById('announceWinner').innerHTML = determineWinner(userChoice,computerChoice);
+  document.getElementById('announceScore').innerHTML = determineUserScore(userChoice,computerChoice,userScore);
+  document.getElementById('userPick').setAttribute("class", "fas fa-bomb fa-10x p-3 align");
+  if (computerChoice === 'rock') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-rock fa-10x p-3");
+  } else if (computerChoice === 'paper') {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-paper fa-10x p-3");
+  } else {
+  document.getElementById('computerPick').setAttribute("class", "far fa-hand-scissors fa-10x p-3");
+  }
+};
+
+document.getElementById('duelRock').addEventListener('click', playGameRock);
+document.getElementById('duelPaper').addEventListener('click', playGamePaper);
+document.getElementById('duelScissors').addEventListener('click', playGameScissors);
+document.getElementById('duelBomb').addEventListener('click', playGameBomb);
