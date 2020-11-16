@@ -41,15 +41,11 @@
       /* Overwrite default color of dropdown text when hovered over applied by Bootstrap */
       .dropdown .dropdown-menu .dropdown-item:active,
       .dropdown .dropdown-menu .dropdown-item:hover{color: #1F2833 !important;}
-      /* Change default color of horizontal rule */
-      hr {
-        border-color: #66FCF1;
-      }
       /* Overwrite default color of button in Bootstrap */
       .btn-outline-primary {
         background-color: #1F2833 !important;
-        color: #ffffff !important;
-        border-color: #ffffff !important;
+        color: #FFFFFF !important;
+        border-color: #FFFFFF !important;
       }
       /* Overwrite default color of outline light button when hovered over applied by Bootstrap */
       .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
@@ -57,13 +53,28 @@
         color: #66FCF1 !important;
         border-color: #66FCF1 !important;
       }
+      /* Overwrite ordered list numbers' colour */
+      ol {
+        list-style: none;
+        counter-reset: li-counter;
+      }
+      ol li {
+        counter-increment: li-counter;
+      }
+      ol li::before {
+        content: counter(li-counter) ". ";
+        color: #66FCF1;
+        /* Vertically align ordered list text */
+        width: 3em;
+        display: inline-block;
+      }
     </style>
     <title></> Type2Horizon | Portfolio</title>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0B0C10;">
-  <a class="navbar-brand" style="color: #66FCF1" href="../index.html"><h1><i class="fas fa-code"></i> Type2Horizon</h1></a>
+  <a class="navbar-brand" style="color: #66FCF1" href="../../../index.html"><h1><i class="fas fa-code"></i> Type2Horizon</h1></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -71,7 +82,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" style="color: #66FCF1" href="../cv.html">CV</a>
+        <a class="nav-link" style="color: #66FCF1" href="../../../cv.html">CV</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" style="color: #66FCF1" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -80,12 +91,12 @@
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" style="color: #66FCF1" href="#">Coming Soon</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" style="color: #66FCF1" href="../extended-codecademy/projects.html">Extended Codecademy</a>
-          <a class="dropdown-item" style="color: #66FCF1" href="../extended-freecodecamp/projects.html">Extended freeCodeCamp</a>
+          <a class="dropdown-item" style="color: #66FCF1" href="../../projects.html">Extended Codecademy</a>
+          <a class="dropdown-item" style="color: #66FCF1" href="../../../extended-freecodecamp/projects.html">Extended freeCodeCamp</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" style="color: #66FCF1" href="../contact.html">Contact</a>
+        <a class="nav-link" style="color: #66FCF1" href="../../../contact.html">Contact</a>
       </li>
     </ul>
   </div>
@@ -93,83 +104,55 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4 align-self-center"><p class="text-center text-white p-3"></i><i class="fas fa-chalkboard-teacher fa-7x p-3"></i></p></div>
-    <div class="col-md-8 align-self-center"><h1 class="text-center text-white p-3">Codecademy Projects</h1></div>
+    <div class="col-md-12 text-white p-3">
+      <h1>Create a Table <a class="btn btn-outline-primary" href="https://github.com/Type2Horizon/Type2Horizon.github.io/tree/master/extended-codecademy/sql/create-a-table" target="_blank" role="button">Code</a></h1>
+      <p>Create your own friends table and add/delete data from it!</p>
   </div>
 </div>
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-3"><h2 class="text-white p-3">JavaScript</h2>
-      <ul class="text-white">
-        <li><a class="text-white" href="javascript/kelvin-weather/kelvin-weather.html">Kelvin Weather</a></li>
-        <li><a class="text-white" href="javascript/dog-years/dog-years.html">Dog Years</a></li>
-        <li><a class="text-white" href="javascript/magic-eight-ball/magic-eight-ball.html">Magic Eight Ball</a></li>
-        <li><a class="text-white" href="javascript/rock-paper-scissors/rock-paper-scissors.html">Rock Paper Scissors</a></li>
-        <li><a class="text-white" href="javascript/sleep-debt-calculator/sleep-debt-calculator.html">Sleep Debt Calculator</a></li>
-        <li><a class="text-white" href="javascript/whale-talk/whale-talk.html">Whale Talk</a></li>
-        <li><a class="text-white" href="javascript/meal-maker/meal-maker.html">Meal Maker</a></li>
-      </ul>
-    </div>
-    <div class="col-md-3"><h2 class="text-white p-3">JS DOM</h2>
-     <ul class="text-white">
-       <!--<li><a class="text-white" href="#">Project 1</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 2</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 3</a></li>-->
-     </ul>
-   </div>
-   <div class="col-md-3"><h2 class="text-white p-3">jQuery</h2>
-     <ul class="text-white">
-       <!--<li><a class="text-white" href="#">Project 1</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 2</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 3</a></li>-->
-     </ul>
-   </div>
-   <div class="col-md-3"><h2 class="text-white p-3">Phaser.JS</h2>
-     <ul class="text-white">
-       <!--<li><a class="text-white" href="#">Project 1</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 2</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 3</a></li>-->
-     </ul>
-    </div>
-  </div>
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3"><h2 class="text-white p-3">SQL</h2>
-      <ul class="text-white">
-       <li><a class="text-white" href="sql/create-a-table/create-a-table.html">Create a Table</a></li>
-       <!--<li><a class="text-white" href="#">Project 2</a></li>-->
-       <!--<li><a class="text-white" href="#">Project 3</a></li>-->
-      </ul>
-    </div>
-  </div>
-</div>
-
-<hr>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 text-center"><h2 class="text-white p-3">Completed Courses</h2></div>
-  </div>
-</div>
-
-<hr>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12 align-self-center pt-3">
-      <p class="text-center">
-        <a href="https://www.codecademy.com/learn/learn-sql" target="_blank" button type="button" class="btn btn-outline-primary m-1">Learn SQL</a>
-        <a href="https://www.codecademy.com/learn/learn-html" target="_blank" type="button" class="btn btn-outline-primary m-1">Introduction to HTML</a>
-        <a href="https://www.codecademy.com/learn/learn-css" target="_blank" button type="button" class="btn btn-outline-primary m-1">Learn CSS</a>
-        <a href="https://www.codecademy.com/learn/learn-bootstrap" target="_blank" button type="button" class="btn btn-outline-primary m-1">Learn Bootstrap</a>
-        <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank" button type="button" class="btn btn-outline-primary m-1">Introduction to JavaScript</a>
-        <a href="https://www.codecademy.com/learn/build-interactive-websites" target="_blank" button type="button" class="btn btn-outline-primary m-1">Current: Interactive JavaScript Websites</a>
-        <a href="https://www.codecademy.com/learn/learn-jquery" target="_blank" button type="button" class="btn btn-outline-primary m-1">Next: Introduction to jQuery</a>
-        <!--<a href="https://www.codecademy.com/learn/learn-phaser" target="_blank" button type="button" class="btn btn-outline-primary m-1">Game Development with Phaser.JS</a>-->
-      </p>
+    <div class="col-md-12">
+        <code class="text-white">
+          <ol>
+            <li>CREATE TABLE friends (</li>
+            <li>&emsp;id INTEGER,</li>
+            <li>&emsp;name TEXT,</li>
+            <li>&emsp;birthday DATE</li>
+            <li>);</li>
+            <li></li>
+            <li>INSERT INTO friends (id, name, birthday)</li>
+            <li>VALUES (1, 'Jane Doe', '1990-05-30');</li>
+            <li></li>
+            <li>INSERT INTO friends (id, name, birthday)</li>
+            <li>VALUES (2, 'Thierry Henry', '1977-08-17');</li>
+            <li></li>
+            <li>INSERT INTO friends (id, name, birthday)</li>
+            <li>VALUES (3, 'Patrick Vieira', '1976-06-23');</li>
+            <li></li>
+            <li>UPDATE friends</li>
+            <li>SET name = 'Jane Smith'</li>
+            <li>WHERE id = 1;</li>
+            <li></li>
+            <li>ALTER TABLE friends</li>
+            <li>ADD COLUMN email TEXT;</li>
+            <li></li>
+            <li>UPDATE friends</li>
+            <li>SET email = 'jane@codecademy.com'</li>
+            <li>WHERE id = 1;</li>
+            <li></li>
+            <li>UPDATE friends</li>
+            <li>SET email = 'thierry@codecademy.com'</li>
+            <li>WHERE id = 2;</li>
+            <li></li>
+            <li>UPDATE friends</li>
+            <li>SET email = 'patrick@codecademy.com'</li>
+            <li>WHERE id = 3;</li>
+            <li></li>
+            <li>SELECT *</li>
+            <li>FROM friends;</li>
+          </ol>
+        </code>
     </div>
   </div>
 </div>
