@@ -105,7 +105,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12 text-white p-3">
-      <h1>New York Restaurants - Query Table - <a class="btn btn-outline-primary" href="https://github.com/Type2Horizon/Type2Horizon.github.io/tree/master/extended-codecademy/sql/new-york-restaurants" target="_blank" role="button">Code</a></h1>
+      <h1>New York Restaurants - Query Table <a class="btn btn-outline-primary" href="https://github.com/Type2Horizon/Type2Horizon.github.io/tree/master/extended-codecademy/sql/new-york-restaurants" target="_blank" role="button">Code</a></h1>
       <p>We have put together a table of restaurants called nomnom and we need your help to answer some questions using the SQL commands.</p>
       <p>The schema of this table is available <a href="https://content.codecademy.com/courses/sql-intensive/nomnom.png" target="_blank" style="color: #66FCF1">here</a>.</p>
   </div>
@@ -116,7 +116,77 @@
     <div class="col-md-12">
         <code class="text-white">
           <ol>
-
+            <li style="color: grey">/* Returns full nomnom table. */</li>
+            <li>SELECT *</li>
+            <li>FROM nomnom;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns distinct neighborhoods. */</li>
+            <li>SELECT DISTINCT neighborhood</li>
+            <li>FROM nomnom;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns distinct cuisine. */</li>
+            <li>SELECT DISTINCT cuisine</li>
+            <li>FROM nomnom;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns Chinese restaurants. */</li>
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE cuisine = 'Chinese';</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns restaurants with a review of 4 and above. */
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE review >= 4;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns Italian restaurants with a price of $$$. */
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE cuisine = 'Italian'</li>
+            <li>&emsp;AND price = '$$$';</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns restaurant names containing meatball. */
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE name LIKE '%meatball%';</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns restaurants in Midtown, Downtown or Chinatown. */
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE neighborhood = 'Midtown'</li>
+            <li>&emsp;OR neighborhood = 'Downtown'</li>
+            <li>&emsp;OR neighborhood = 'Chinatown';</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns restaurants where health grade pending (empty values). */</li>
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>WHERE health IS NULL;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns the Top 10 restaurants based on review score */</li>
+            <li>SELECT *</li>
+            <li>FROM nomnom</li>
+            <li>ORDER BY review DESC</li>
+            <li>LIMIT 10;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* New Review column returning review scores of >4.5 as Extraordinary, >4 as Excellent, >3 as Good, >2 as Fair and remaining as Poor */</li>
+            <li>SELECT name,</li>
+            <li>&emsp;CASE</li>
+            <li>&emsp;&emsp;WHEN review > 4.5 THEN 'Extraordinary'</li>
+            <li>&emsp;&emsp;WHEN review > 4 THEN 'Excellent'</li>
+            <li>&emsp;&emsp;WHEN review > 3 THEN 'Good'</li>
+            <li>&emsp;&emsp;WHEN review > 2 THEN 'Fair'</li>
+            <li>&emsp;&emsp;ELSE 'Poor'</li>
+            <li>&emsp;END AS 'Review'</li>
+            <li>FROM nomnom;</li>
           </ol>
         </code>
     </div>
