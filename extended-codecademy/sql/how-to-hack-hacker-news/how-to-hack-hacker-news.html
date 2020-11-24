@@ -147,6 +147,37 @@
             <li style="color: grey">/* Adds previous users’ scores together and divides by the total to get the percentage */</li>
             <li>SELECT (517 + 309 + 304 + 282) / 6366.0;</li>
           </ol>
+          <ol>
+            <li style="color: grey">/* Returns the number of users who posted this link: https://www.youtube.com/watch?v=dQw4w9WgXcQ */</li>
+            <li>SELECT user,</li>
+            <li>&emsp;COUNT(*)</li>
+            <li>FROM hacker_news</li>
+            <li>WHERE url LIKE '%watch?v=dQw4w9WgXcQ%'</li>
+            <li>GROUP BY user</li>
+            <li>ORDER BY COUNT(*) DESC;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns which of these sites feed Hacker News the most: GitHub, Medium, or New York Times? */</li>
+            <li>SELECT CASE</li>
+            <li>&emsp;&emsp;WHEN url LIKE '%github.com%' THEN 'GitHub'</li>
+            <li>&emsp;&emsp;WHEN url LIKE '%medium.com%' THEN 'Medium'</li>
+            <li>&emsp;&emsp;WHEN url LIKE '%nytimes.com%' THEN 'New York Times'</li>
+            <li>&emsp;&emsp;ELSE 'Other'</li>
+            <li>&emsp;END AS 'Source',</li>
+            <li>&emsp;COUNT(*)</li>
+            <li>FROM hacker_news</li>
+            <li>GROUP BY 1;</li>
+          </ol>
+          <ol>
+            <li style="color: grey">/* Returns the best time of the day to post a story on Hacker News to get a high score */</li>
+            <li>SELECT strftime('%H', timestamp) AS 'Hour',</li> 
+            <li>&emsp;ROUND(AVG(score), 1) AS 'Average Score',</li> 
+            <li>COUNT(*) AS 'Number of Stories'</li>
+            <li>FROM hacker_news</li>
+            <li>WHERE timestamp IS NOT NULL</li>
+            <li>GROUP BY 1</li>
+            <li>ORDER BY 1;</li>
+          </ol>
         </code>
     </div>
   </div>
